@@ -71,7 +71,10 @@ __xonsh__.env['PROMPT_FIELDS']['hist_status'] = lambda: '' if __xonsh__.history.
 def _screens():
     line = []
     sty = None
-    for l in __xonsh__.subproc_captured_stdout(['bash', '-c', 'screen -ls; exit 0']).splitlines():  # bash is to fix https://github.com/xonsh/xonsh/issues/4912 
+    scrs = __xonsh__.subproc_captured_stdout(['bash', '-c', 'screen -ls; exit 0'])
+    if isinstance(scrs, str):
+        scrs = scrs.splitlines()
+    for l in scrs:  # bash is to fix https://github.com/xonsh/xonsh/issues/4912 
         if '\t' in l:
             screen_name = l.split('\t')[1].split('.')[1]
             if sty is None:  # lazy load
