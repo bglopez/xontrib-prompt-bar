@@ -122,6 +122,8 @@ success_symbol = ""
 error_symbol = ""
 [status]
 symbol = ""
+#[directory]
+#disabled = true
 """.strip()) > ~/.config/starship_xonsh_right.toml
 
 # Then just add the starship bar to right
