@@ -4,8 +4,8 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "xontrib-prompt-bar"
-version = "0.5.8"
-description = "The bar theme for xonsh shell."
+version = "0.5.9"
+description = "The bar prompt for xonsh shell with customizable sections and Starship support."
 readme = "README.md"
 license = { text = "BSD" }
 authors = [{ name = "anki", email = "author@example.com" }]
